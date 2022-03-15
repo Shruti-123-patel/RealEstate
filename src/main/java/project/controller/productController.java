@@ -169,18 +169,70 @@ public class productController {
 	
 	@RequestMapping(value="/update")
 	public String update(@RequestParam int pid,@RequestParam String classs,HttpServletRequest req,Model m) {
-		System.out.println("hello");
+//		System.out.println("hello");
 		Product p=productDAO.findProduct(pid,classs);
-		System.out.println("shrey");
+		
+		System.out.println(p);
 		m.addAttribute("obj", p);
 		return "update"+classs;
 	}
 	
 	@RequestMapping(value="/updateHospital")
 	public void updateH(Hospital h,Model m,HttpServletRequest request) {
-		String i=request.getParameter("oid");
-		productDAO.updateHospital(h);
+		int i=Integer.parseInt(request.getParameter("oid"));
+		
+		h.setId(h.getId());
+		productDAO.updateHospital(h,i);
 		m.addAttribute("obj", h);
 		viewAll(1,request,m);
 	}
+	
+	@RequestMapping(value="/updateVilla")
+	public void updateV(Villa h,Model m,HttpServletRequest request) {
+		int i=Integer.parseInt(request.getParameter("oid"));
+		
+		h.setId(h.getId());
+		productDAO.updateVilla(h,i);
+		m.addAttribute("obj", h);
+		viewAll(5,request,m);
+	}
+	
+	@RequestMapping(value="/updateOffice")
+	public void updateO(Office h,Model m,HttpServletRequest request) {
+		int i=Integer.parseInt(request.getParameter("oid"));
+		
+		h.setId(h.getId());
+		productDAO.updateOffice(h,i);
+		m.addAttribute("obj", h);
+		viewAll(4,request,m);
+	}
+	
+	@RequestMapping(value="/updateComplex")
+	public void updateC(Complex h,Model m,HttpServletRequest request) {
+		int i=Integer.parseInt(request.getParameter("oid"));
+		
+		h.setId(h.getId());
+		productDAO.updateComplex(h,i);
+		m.addAttribute("obj", h);
+		viewAll(3,request,m);
+	}
+	
+	@RequestMapping(value="/updateResidentialBuilding")
+	public void updateR(ResidentialBuilding h,Model m,HttpServletRequest request) {
+		int i=Integer.parseInt(request.getParameter("oid"));
+		
+		h.setId(h.getId());
+		productDAO.updateResidentialBuilding(h,i);
+		m.addAttribute("obj", h);
+		viewAll(2,request,m);
+	}
+	
+	@RequestMapping(value="/removeProduct")
+	public void removeProduct(@RequestParam String classs,@RequestParam int pid,Model m,HttpServletRequest request) {
+		
+		Product p=productDAO.findProduct(pid, classs);
+		productDAO.removeProduct(p);
+		
+	}
+	
 }

@@ -14,18 +14,17 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form:form action="updateHospital" method="POST" modelAttribute="obj">
+	<form:form action="updateVilla" method="POST" modelAttribute="obj">
 		<form:hidden value="${obj.id }" path="id"/>
-		Name:		    <form:input value="${obj.getName() }" path="Name" />
-		GeneralRooms:   <form:input value="${obj.getGeneralRooms() }" path="GeneralRooms" />
-		OT:				<form:input value="${obj.getOT() }" path="OT" />
-		ICU:			<form:input value="${obj.getICU() }" path="ICU" />
-		chambers:		<form:input value="${obj.getChambers() }" path="chambers" />
-		OwnerId:	  	<input name="oid" value="${obj.getOwner().getId() }" type="text"/>  
-		Description:	<form:input value="${obj.getDescription() }" path="Description" />
+		Name:		  <form:input value="${obj.Name }" path="Name" />
+		Bedrooms :    <form:input value="${obj.Bedrooms }" path="Bedrooms" />
+		Floors: 	  <form:input value="${obj.Floors }" path="Floors" />
+		SwimmingPools:<form:input value="${obj.noSwimmingPool }" path="noSwimmingPool" />
+		OwnerId:	  <input name="oid" type="text"/>  
+		Description:  <form:input value="${obj.Description }" path="Description" />
 		
 		<input type="submit" value="Submit" />
-		
+	
 	</form:form>
 </body>
 </html>

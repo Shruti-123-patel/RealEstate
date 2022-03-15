@@ -16,6 +16,12 @@ import javax.persistence.Table;
 @Table(name = "hospital")
 public class Hospital extends Product implements Serializable {
 
+	@Override
+	public String toString() {
+		return "Hospital [id=" + id + ", GeneralRooms=" + GeneralRooms + ", Description=" + Description + ", OT=" + OT
+				+ ", ICU=" + ICU + ", chambers=" + chambers + ", Name=" + Name + ", owner=" + owner + "]";
+	}
+
 	/**
 	 * 
 	 */
