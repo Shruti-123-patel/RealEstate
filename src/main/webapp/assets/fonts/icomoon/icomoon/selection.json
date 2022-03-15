@@ -1813,7 +1813,7 @@
 				"isMulticolor": false,
 				"tags": [
 					"profile-male",
-					"persona",
+					"Producta",
 					"profile",
 					"male",
 					"user",
@@ -17109,7 +17109,7 @@
 					"user",
 					"profile",
 					"avatar",
-					"person",
+					"Product",
 					"member"
 				],
 				"grid": 16
@@ -17174,7 +17174,7 @@
 					"user-add",
 					"profile",
 					"avatar",
-					"person",
+					"Product",
 					"member"
 				],
 				"grid": 16
@@ -17207,7 +17207,7 @@
 					"user-remove",
 					"profile",
 					"avatar",
-					"person",
+					"Product",
 					"member"
 				],
 				"grid": 16
@@ -17240,7 +17240,7 @@
 					"user-tick",
 					"profile",
 					"avatar",
-					"person",
+					"Product",
 					"member"
 				],
 				"grid": 16
@@ -17271,7 +17271,7 @@
 					"user-employee",
 					"profile",
 					"avatar",
-					"person",
+					"Product",
 					"member",
 					"job",
 					"official"

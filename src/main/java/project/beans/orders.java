@@ -1,4 +1,4 @@
-package beans;
+package project.beans;
 
 import java.io.Serializable;
 import java.util.Date;

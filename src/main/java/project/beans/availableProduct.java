@@ -1,4 +1,4 @@
-package beans;
+package project.beans;
 import java.io.Serializable;
 
 import javax.persistence.Column;
@@ -22,6 +22,23 @@ public class availableProduct implements Serializable{
 	int productTypeId;
 	
 	@Column(name = "name")
+	private
 	String Name;
+
+	public int getProductTypeId() {
+		return productTypeId;
+	}
+
+	public void setProductTypeId(int productTypeId) {
+		this.productTypeId = productTypeId;
+	}
+
+	public String getName() {
+		return Name;
+	}
+
+	public void setName(String name) {
+		Name = name;
+	}
 
 }

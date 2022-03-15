@@ -1,4 +1,4 @@
-package beans;
+package project.beans;
 import java.io.Serializable;
 
 import javax.persistence.Column;
@@ -22,7 +22,30 @@ public class ownerDetails implements Serializable{
 	@GeneratedValue( strategy = GenerationType. IDENTITY   )
 	int Id;
 	
-	@Column(name = "name")
+	public int getId() {
+		return Id;
+	}
+
+	public void setId(int id) {
+		Id = id;
+	}
+
+	public String getName() {
+		return Name;
+	}
+
+	public void setName(String name) {
+		Name = name;
+	}
+
+	public String getPhone_no() {
+		return Phone_no;
+	}
+
+	public void setPhone_no(String phone_no) {
+		Phone_no = phone_no;
+	}
+
 	String Name;
 	
 	@Column(name = "phoneNo")
