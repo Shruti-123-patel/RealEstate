@@ -14,12 +14,12 @@
 <title>Insert title here</title>
 </head>
 <body>
-	<form:form action="addComplex" method="POST" modelAttribute="obj">
+	<form:form action="addComplex" method="POST" modelAttribute="obj" enctype="multipart/form-data">
 		Name:		  <form:input path="Name" />
 		Shops: 	  	  <form:input path="Shops" />
 		Description:  <form:input path="Description" />
 		OwnerId:	  <input name="oid" type="text"/>  
-		<%-- image:		  <form:file	 --%>
+		image:		  <input type="file" name="img" />	
 		<input type="submit" value="Submit" />
 	
 	</form:form>

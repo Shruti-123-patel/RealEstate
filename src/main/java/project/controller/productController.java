@@ -1,15 +1,22 @@
 package project.controller;
 
+import java.io.File;
+import java.io.FileOutputStream;
+import java.io.IOException;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpRequest;
+import org.springframework.http.MediaType;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.multipart.commons.CommonsMultipartFile;
 
 import project.beans.*;
 import project.beans.availableProduct;
@@ -119,10 +126,21 @@ public class productController {
 		return "addHospital";
 	}
 	
-	@RequestMapping(value="/addComplex")
-	public String addComplex(Complex h,Model m,HttpServletRequest request) {
+	@RequestMapping(value="/addComplex",method=RequestMethod.POST,consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
+	public String addComplex(@RequestParam CommonsMultipartFile img, Complex h,Model m,HttpServletRequest request,HttpSession s) {
 		String i=request.getParameter("oid");
-		productDAO.adComplex(h,i);
+		byte[] data=img.getBytes();
+		String path=s.getServletContext().getRealPath("/")+"assets"+File.separator+"images"+File.separator+img.getOriginalFilename();
+		try {
+			FileOutputStream fos=new FileOutputStream(path);
+			fos.write(data);
+			fos.close();
+			System.out.print("file uploaded");
+		}catch(IOException E) {
+			E.printStackTrace();
+		}
+		String name=img.getOriginalFilename();
+		productDAO.adComplex(h,i,name);
 		Complex c=new Complex();
 		m.addAttribute("obj", c);
 		return "addComplex";
@@ -169,7 +187,7 @@ public class productController {
 	
 	@RequestMapping(value="/update")
 	public String update(@RequestParam int pid,@RequestParam String classs,HttpServletRequest req,Model m) {
-//		System.out.println("hello");
+		System.out.println("hello");
 		Product p=productDAO.findProduct(pid,classs);
 		
 		System.out.println(p);

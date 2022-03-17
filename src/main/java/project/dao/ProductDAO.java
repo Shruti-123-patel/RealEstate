@@ -46,7 +46,12 @@ public class ProductDAO {
 	@Transactional
 	public void adOffice(Office p, String oid) {
 		Integer id = Integer.parseInt(oid);
+		System.out.println(oid);
 		ownerDetails o = hibernateTemplate.get(ownerDetails.class, id);
+		if(o==null) {
+			
+		}
+		System.out.println(o);
 		p.setOwner(o);
 		hibernateTemplate.save(p);
 	}
@@ -60,10 +65,11 @@ public class ProductDAO {
 	}
 
 	@Transactional
-	public void adComplex(Complex p, String oid) {
+	public void adComplex(Complex p, String oid,String img) {
 		Integer id = Integer.parseInt(oid);
 		ownerDetails o = hibernateTemplate.get(ownerDetails.class, id);
 		p.setOwner(o);
+		p.setImg(img);
 		hibernateTemplate.save(p);
 	}
 
@@ -144,7 +150,7 @@ public class ProductDAO {
 //			session.delete(p);
 //		}
 //		logger.info("Product deleted successfully, Product details=" + p);
-		this.hibernateTemplate.delete(p);
+		this.hibernateTemplate.delete(p);    
 	}
 
 	@Transactional

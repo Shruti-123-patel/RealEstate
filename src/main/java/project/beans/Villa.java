@@ -24,25 +24,20 @@ public class Villa extends Product implements Serializable {
 		this.id = id;
 	}
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = -7234718489649270736L;
-
 	@Id
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
 
 	int Bedrooms;
 
-	String Name;
+	String name;
 
 	public String getName() {
-		return Name;
+		return name;
 	}
 
 	public void setName(String name) {
-		Name = name;
+		name = name;
 	}
 
 	String Description;

@@ -13,6 +13,11 @@ import javax.persistence.Table;
 public class ownerDetails implements Serializable{
 
 
+	@Override
+	public String toString() {
+		return "ownerDetails [Id=" + Id + ", Name=" + Name + ", Phone_no=" + Phone_no + "]";
+	}
+
 	/**
 	 * 
 	 */
