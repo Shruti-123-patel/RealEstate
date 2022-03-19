@@ -1,4 +1,3 @@
-
 <!DOCTYPE html>
 <!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
 <!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
@@ -81,7 +80,7 @@
 			<div class="container">
 				<div class="nav-header">
 					<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
-					<h1 id="fh5co-logo"><a href="index.html"><i class="icon-home"></i>Home<span>state</span></a></h1>
+					<h1 id="fh5co-logo"><a href="backtoindex"><i class="icon-home"></i>Home<span>state</span></a></h1>
 					<!-- START #fh5co-menu-wrap -->
 					<nav id="fh5co-menu-wrap" role="navigation">
 						<ul class="sf-menu" id="fh5co-primary-menu">
@@ -110,7 +109,7 @@
 		<aside id="fh5co-hero" class="js-fullheight">
 			<div class="flexslider js-fullheight">
 				<ul class="slides">
-			   	<li style="background-image: url(${images}/img_bg_3.jpg);">
+			   	<li style="background-image: url(/project/assets/images/first.jpg);">
 			   		<div class="overlay"></div>
 			   		<div class="container-fluid">
 			   			<div class="row">
@@ -132,7 +131,8 @@
 				<div class="row">
 					<div class="col-md-8 col-md-offset-2 text-center heading-section animate-box">
 						<h3>Contact Information</h3>
-						<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts.</p>
+						<p>Can approach us anytime for all types of queries,bookings and any other deals.We will be more tham happy to serve you at our first priority. . .	 </p>
+						
 					</div>
 				</div>
 				<form action="#">
@@ -184,7 +184,7 @@
 					<div class="row row-bottom-padded-md">
 						<div class="col-md-3">
 							<h3 class="section-title">About Homestate</h3>
-							<p>Far far away, behind the word mountains, far from the countries Vokalia and Consonantia, there live the blind texts. Separated they live in Bookmarksgrove right at the coast of the Semantics.</p>
+							<p>The only website where you can find the best holiday trip deals in afordable prices and can enjoy your trip to the fullest.</p>
 						</div>
 						
 						<div class="col-md-3 col-md-push-1">
