@@ -250,7 +250,7 @@ public class productController {
 		
 		Product p=productDAO.findProduct(pid, classs);
 		productDAO.removeProduct(p);
-		
+		viewAll(pid,request,m);
 	}
 	
 }
