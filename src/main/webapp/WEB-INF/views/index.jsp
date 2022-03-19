@@ -16,57 +16,48 @@
 <meta name="author" content="FREEHTML5.CO" />
 
 <!-- Facebook and Twitter integration -->
-<meta property="og:title" content="" />
-<meta property="og:image" content="" />
-<meta property="og:url" content="" />
-<meta property="og:site_name" content="" />
-<meta property="og:description" content="" />
 <meta name="twitter:title" content="" />
 <meta name="twitter:image" content="" />
 <meta name="twitter:url" content="" />
 <meta name="twitter:card" content="" />
 
 
-<spring:url var="css" value="/r/css" />
-<spring:url var="js" value="/r/js" />
-<spring:url var="images" value="/r/images" />
-
-
 
 
 <!-- Place favicon.ico and apple-touch-icon.png in the root directory -->
-<link rel="shortcut icon" href="favicon.ico">
+<link rel="shortcut icon" href="favicon.icon">
 
 <link
 	href='https://fonts.googleapis.com/css?family=Open+Sans:300,400,700,300'
 	rel='stylesheet' type='text/css'>
 
 <!-- Animate.css -->
-<link rel="stylesheet" href="${css}/animate.css">
+<link rel="stylesheet" href="/project/assets/css/animate.css">
 <!-- Icomoon Icon Fonts-->
-<link rel="stylesheet" href="${css}/icomoon.css">
+<link rel="stylesheet" href="/project/assets/css/icomoon.css">
 <!-- Bootstrap  -->
-<link rel="stylesheet" href="${css}/bootstrap.css">
+<link rel="stylesheet" href="/project/assets/css/bootstrap.css">
 <!-- Superfish -->
-<link rel="stylesheet" href="${css}/superfish.css">
+<link rel="stylesheet" href="/project/assets/css/superfish.css">
 <!-- Flexslider  -->
-<link rel="stylesheet" href="${css}/flexslider.css">
+<link rel="stylesheet" href="/project/assets/css/flexslider.css">
 <!-- Magnific Popup -->
-<link rel="stylesheet" href="${css}/magnific-popup.css">
+<link rel="stylesheet" href="/project/assets/css/magnific-popup.css">
 <!-- Date Picker -->
-<link rel="stylesheet" href="${css}/bootstrap-datepicker.min.css">
+<link rel="stylesheet"
+	href="/project/assets/css/bootstrap-datepicker.min.css">
 <!-- CS Select -->
-<link rel="stylesheet" href="${css}/cs-select.css">
-<link rel="stylesheet" href="${css}/cs-skin-border.css">
+<link rel="stylesheet" href="/project/assets/css/cs-select.css">
+<link rel="stylesheet" href="/project/assets/css/cs-skin-border.css">
 
-<link rel="stylesheet" href="${css}/style.css">
+<link rel="stylesheet" href="/project/assets/css/style.css">
 
 
 <!-- Modernizr JS -->
-<script src="${js}/modernizr-2.6.2.min.js"></script>
+<script src="/project/assets/js/modernizr-2.6.2.min.js"></script>
 <!-- FOR IE9 below -->
 <!--[if lt IE 9]>
-	<script src="${js}/respond.min.js"></script>
+	<script src="/project/assets/js/respond.min.js"></script>
 	<![endif]-->
 
 </head>
@@ -102,7 +93,15 @@
 			</header>
 
 			<!-- end:header-top -->
-			
+			<!-- <aside id="fh5co-hero" class="js-fullheight">
+				<div class="flexslider js-fullheight">
+					<ul class="slides">
+						
+						
+					</ul>
+				</div>
+			</aside> -->
+
 			<div id="fh5co-search-map">
 				<div class="search-property">
 					<div class="s-holder">
@@ -239,7 +238,7 @@
 					</div>
 				</div>
 				<div class="map"
-					style="background-image: url(${images}/cover_bg_1.jpg);"></div>
+					style="background-image: url(/project/assets/images/first.jpg);"></div>
 			</div>
 
 			<div id="fh5co-features">
@@ -356,8 +355,8 @@
 					<div class="row">
 						<div class="col-md-4 animate-box">
 							<a href="#" class="fh5co-property"
-								style="background-image: url(${images}/property-1.jpg);"> <span
-								class="status">Sale</span>
+								style="background-image: url(/project/assets/images/usabeach.jpg);">
+								<span class="status">Sale</span>
 								<div class="prop-details">
 									<span class="price">$3,000</span>
 									<h3>Properties Near in Beach, USA California</h3>
@@ -366,8 +365,8 @@
 						</div>
 						<div class="col-md-4 animate-box">
 							<a href="#" class="fh5co-property"
-								style="background-image: url(${images}/property-2.jpg);"> <span
-								class="status">Rent</span>
+								style="background-image: url(/project/assets/images/nz.jpg);">
+								<span class="status">Rent</span>
 								<div class="prop-details">
 									<span class="price">$200/mos</span>
 									<h3>Modern House at NZ</h3>
@@ -376,8 +375,8 @@
 						</div>
 						<div class="col-md-4 animate-box">
 							<a href="#" class="fh5co-property"
-								style="background-image: url(${images}/property-3.jpg);"> <span
-								class="status">Sale</span>
+								style="background-image: url(/project/assets/images/bh.jpg);">
+								<span class="status">Sale</span>
 								<div class="prop-details">
 									<span class="price">$3,000</span>
 									<h3>Bonggalo House</h3>
@@ -389,7 +388,7 @@
 			</div>
 
 			<div id="fh5co-testimonial"
-				style="background-image: url(${images}/img_bg_2.jpg);">
+				style="background-image: url(/project/assets/images/img_bg_2.jpg);">
 				<div class="container">
 					<div class="row animate-box">
 						<div class="col-md-8 col-md-offset-2 text-center fh5co-heading">
@@ -402,10 +401,10 @@
 								<blockquote>
 									<span class="quote"><span><i
 											class="icon-quotes-right"></i></span></span>
-									<p>&ldquo;Far far away, behind the word mountains, far from
-										the countries Vokalia and Consonantia, there live the blind
-										texts. Separated they live in Bookmarksgrove right at the
-										coast of the Semantics, a large language ocean.&rdquo;</p>
+									<p>&ldquo;"The trip was wonderful - lots of great memories were made. 
+									All the arrangements (flights, hotels, cars, cab transfers) went as planned.....
+									 Wine country was fun - Penny even learned to enjoy good red wine.
+									  We toured Pear Harbor, the Dole plantation and the north shore on Oahu."&rdquo;</p>
 								</blockquote>
 								<p class="author">
 									John Doe, CEO <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a>
@@ -419,9 +418,10 @@
 								<blockquote>
 									<span class="quote"><span><i
 											class="icon-quotes-right"></i></span></span>
-									<p>&ldquo;Far far away, behind the word mountains, far from
-										the countries Vokalia and Consonantia, there live the blind
-										texts.&rdquo;</p>
+									<p>&ldquo;Our family of 10 traveled to Riviera Maya during the 2021 holidays 
+									and the trip was wonderful! Mandi helped set up all details and everything worked like clockwork.
+									 Airfare from multiple cities, transfers, multiple hotel rooms, COVID testing protocols - everything was perfect.
+									  &rdquo;</p>
 								</blockquote>
 								<p class="author">
 									John Doe, CEO <a href="http://freehtml5.co/" target="_blank">FREEHTML5.co</a>
@@ -436,10 +436,10 @@
 								<blockquote>
 									<span class="quote"><span><i
 											class="icon-quotes-right"></i></span></span>
-									<p>&ldquo;Far far away, behind the word mountains, far from
-										the countries Vokalia and Consonantia, there live the blind
-										texts. Separated they live in Bookmarksgrove right at the
-										coast of the Semantics, a large language ocean.&rdquo;</p>
+									<p>&ldquo;We were a bit nervous about what to expect in regards to traveling internationally during Covid.
+									 We quickly realized there was really no reason for concern,
+									 and aside from answering a couple of questions at the airport about whether we had Covid symptoms, 
+									 it was a non-issue. .&rdquo;</p>
 								</blockquote>
 								<p class="author">
 									John Doe, Founder <a href="#">FREEHTML5.co</a> <span
@@ -467,8 +467,8 @@
 						<div class="col-md-4 animate-box">
 							<div class="property">
 								<a href="#" class="fh5co-property"
-									style="background-image: url(${images}/property-1.jpg);"> <span
-									class="status">Sale</span>
+									style="background-image: url(/project/assets/images/usabeach.jpg);">
+									<span class="status">Sale</span>
 									<ul class="list-details">
 										<li>2000 ft sq
 										<li>
@@ -490,8 +490,8 @@
 						<div class="col-md-4 animate-box">
 							<div class="property">
 								<a href="#" class="fh5co-property"
-									style="background-image: url(${images}/property-2.jpg);"> <span
-									class="status">Rent</span>
+									style="background-image: url(/project/assets/images/nz.jpg);">
+									<span class="status">Rent</span>
 									<ul class="list-details">
 										<li>2000 ft sq
 										<li>
@@ -513,8 +513,8 @@
 						<div class="col-md-4 animate-box">
 							<div class="property">
 								<a href="#" class="fh5co-property"
-									style="background-image: url(${images}/property-3.jpg);"> <span
-									class="status">Sale</span>
+									style="background-image: url(/project/assets/images/bh.jpg);">
+									<span class="status">Sale</span>
 									<ul class="list-details">
 										<li>2000 ft sq
 										<li>
@@ -536,8 +536,8 @@
 						<div class="col-md-4 animate-box">
 							<div class="property">
 								<a href="#" class="fh5co-property"
-									style="background-image: url(${images}/property-4.jpg);"> <span
-									class="status">Sale</span>
+									style="background-image: url(/project/assets/images/alaska.jpg);">
+									<span class="status">Sale</span>
 									<ul class="list-details">
 										<li>2000 ft sq
 										<li>
@@ -559,8 +559,8 @@
 						<div class="col-md-4 animate-box">
 							<div class="property">
 								<a href="#" class="fh5co-property"
-									style="background-image: url(${images}/property-5.jpg);"> <span
-									class="status">Rent</span>
+									style="background-image: url(/project/assets/images/mp.jpg);">
+									<span class="status">Rent</span>
 									<ul class="list-details">
 										<li>2000 ft sq
 										<li>
@@ -582,8 +582,8 @@
 						<div class="col-md-4 animate-box">
 							<div class="property">
 								<a href="#" class="fh5co-property"
-									style="background-image: url(${images}/property-6.jpg);"> <span
-									class="status">Sale</span>
+									style="background-image: url(/project/assets/images/mountainhouse.jpg);">
+									<span class="status">Sale</span>
 									<ul class="list-details">
 										<li>2000 ft sq
 										<li>
@@ -622,7 +622,8 @@
 						<div class="col-sm-3 text-center animate-box"
 							data-animate-effect="fadeIn">
 							<div class="fh5co-staff">
-								<img class="img-responsive" src="${images}/user-1.jpg"
+								<img class="img-responsive"
+									src="/project/assets/images/m1.jpg"
 									alt="Free HTML5 Templates by freeHTML5.co">
 								<h3>Jean Smith</h3>
 								<p>Quos quia provident consequuntur culpa facere ratione
@@ -639,7 +640,8 @@
 						<div class="col-sm-3 text-center animate-box"
 							data-animate-effect="fadeIn">
 							<div class="fh5co-staff">
-								<img class="img-responsive" src="${images}/user-2.jpg"
+								<img class="img-responsive"
+									src="/project/assets/images/m2.jpg"
 									alt="Free HTML5 Templates by freeHTML5.co">
 								<h3>Hush Raven</h3>
 								<p>Quos quia provident consequuntur culpa facere ratione
@@ -656,7 +658,8 @@
 						<div class="col-sm-3 text-center animate-box"
 							data-animate-effect="fadeIn">
 							<div class="fh5co-staff">
-								<img class="img-responsive" src="${images}/user-3.jpg"
+								<img class="img-responsive"
+									src="/project/assets/images/m3.jpg"
 									alt="Free HTML5 Templates by freeHTML5.co">
 								<h3>Alex King</h3>
 								<p>Quos quia provident consequuntur culpa facere ratione
@@ -673,7 +676,8 @@
 						<div class="col-sm-3 text-center animate-box"
 							data-animate-effect="fadeIn">
 							<div class="fh5co-staff">
-								<img class="img-responsive" src="${images}/user-4.jpg"
+								<img class="img-responsive"
+									src="/project/assets/images/m4.jpg"
 									alt="Free HTML5 Templates by freeHTML5.co">
 								<h3>Hush Raven</h3>
 								<p>Quos quia provident consequuntur culpa facere ratione
@@ -708,7 +712,7 @@
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="fh5co-blog animate-box">
 								<a href="#"><img class="img-responsive"
-									src="${images}/property-4.jpg" alt=""></a>
+									src="/project/assets/images/property-4.jpg" alt=""></a>
 								<div class="blog-text">
 									<div class="prod-title">
 										<h3>
@@ -729,7 +733,7 @@
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="fh5co-blog animate-box">
 								<a href="#"><img class="img-responsive"
-									src="${images}/property-2.jpg" alt=""></a>
+									src="/project/assets/images/property-2.jpg" alt=""></a>
 								<div class="blog-text">
 									<div class="prod-title">
 										<h3>
@@ -751,7 +755,7 @@
 						<div class="col-lg-4 col-md-4 col-sm-6">
 							<div class="fh5co-blog animate-box">
 								<a href="#"><img class="img-responsive"
-									src="${images}/property-3.jpg" alt=""></a>
+									src="/project/assets/images/property-3.jpg" alt=""></a>
 								<div class="blog-text">
 									<div class="prod-title">
 										<h3>
@@ -817,7 +821,7 @@
 					</div>
 				</div>
 				<div class="half-bg"
-					style="background-image: url(${images}/cover_bg_2.jpg);"></div>
+					style="background-image: url(/project/assets/images/last.jpeg);"></div>
 			</div>
 			<footer>
 				<div id="footer">
@@ -903,28 +907,28 @@
 	<!-- jQuery -->
 
 
-	<script src="${js}/jquery.min.js"></script>
+	<script src="/project/assets/js/jquery.min.js"></script>
 	<!-- jQuery Easing -->
-	<script src="${js}/jquery.easing.1.3.js"></script>
+	<script src="/project/assets/js/jquery.easing.1.3.js"></script>
 	<!-- Bootstrap -->
-	<script src="${js}/bootstrap.min.js"></script>
+	<script src="/project/assets/js/bootstrap.min.js"></script>
 	<!-- Waypoints -->
-	<script src="${js}/jquery.waypoints.min.js"></script>
-	<script src="${js}/sticky.js"></script>
+	<script src="/project/assets/js/jquery.waypoints.min.js"></script>
+	<script src="/project/assets/js/sticky.js"></script>
 	<!-- Superfish -->
-	<script src="${js}/hoverIntent.js"></script>
-	<script src="${js}/superfish.js"></script>
+	<script src="/project/assets/js/hoverIntent.js"></script>
+	<script src="/project/assets/js/superfish.js"></script>
 	<!-- Flexslider -->
-	<script src="${js}/jquery.flexslider-min.js"></script>
+	<script src="/project/assets/js/jquery.flexslider-min.js"></script>
 	<!-- Date Picker -->
-	<script src="${js}/bootstrap-datepicker.min.js"></script>
+	<script src="/project/assets/js/bootstrap-datepicker.min.js"></script>
 	<!-- CS Select -->
-	<script src="${js}/classie.js"></script>
-	<script src="${js}/selectFx.js"></script>
+	<script src="/project/assets/js/classie.js"></script>
+	<script src="/project/assets/js/selectFx.js"></script>
 
 
 	<!-- Main JS -->
-	<script src="${js}/main.js"></script>
+	<script src="/project/assets/js/main.js"></script>
 
 </body>
 </html>
