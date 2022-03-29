@@ -1,19 +1,12 @@
-<!-- <%@ page language="java" contentType="text/html; charset=UTF-8"
-	pageEncoding="UTF-8"%>
-
-<%@ page
-	import="java.util.List,org.apache.catalina.core.ApplicationContext,org.springframework.context.support.ClassPathXmlApplicationContext,project.dao.ProductDAO,project.beans.availableProduct"%>
-<%@ page isELIgnored="false"%>
-<%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%> -->
+<%@page contentType="text/html" pageEncoding="UTF-8" %>
 <!DOCTYPE html>
 <html>
 
-<head>
-	<meta charset="ISO-8859-1">
-	<title>Insert title here</title>
-	<style>
+    <head>
+        <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+        <title>Log In Form</title>
+        <!--<link rel="stylesheet" href="css/style.css"/>-->
+        	<style>
 		@import url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&display=swap');
 
 		* {
@@ -26,15 +19,8 @@
 			margin: 0;
 		}
 
-		/* .img{
-	/* filter: blur(8px);
-  	-webkit-filter: blur(8px); */
-		/* }  * */
 		.full-screen-container {
-			background-image: url('hi4.jpg');
-			/* filter: blur(8px);
-  	-webkit-filter: blur(8px); */
-			/* z-index: -1; */
+			background-image: url('a6.jpg');
 			height: 100vh;
 			width: 100vw;
 			background-size: cover;
@@ -45,13 +31,12 @@
 		}
 
 		.login-container {
-			/* background-color: hsla(201, 81%, 80%, 0.6); */
-			border: 1px solid;
+			background-color: hsla(201, 81%, 80%, 0.6);
 			padding: 50px 30px;
 			min-width: 400px;
 			width: 50%;
 			max-width: 00px;
-			border-color: rgb(0, 0, 0);
+			border-color: green;
 			border-radius: 40px;
 			/* z-index: 2; */
 		}
@@ -68,7 +53,7 @@
 		.input-group {
 			display: flex;
 			flex-direction: column;
-			margin-bottom: 10px;
+			margin-bottom: 40px;
 		}
 
 		.input-group label {
@@ -79,12 +64,12 @@
 		}
 
 		.input-group input {
-			font-size: 1.1em;
+			font-size: 1.5em;
 			padding: 0.1em 0.35em;
 			background-color: hsla(201, 100%, 91%, 0.3);
 			border: 1px solid hsl(201, 100%, 6%);
 			outline: none;
-			border-radius: 10px;
+			border-radius: 55px;
 			color: rgb(0, 0, 0);
 			font-weight: 25px;
 		}
@@ -100,8 +85,8 @@
 		.login-button {
 			padding: 10px 30px;
 			width: 100%;
-			border-radius: 10px;
-			background: hsla(0, 0%, 8%, 0.452);
+			border-radius: 55px;
+			background: hsla(201, 100%, 50%, 0.452);
 			border: 2px solid hsla(201, 93%, 21%, 0.596);
 			outline: none;
 			font-size: 1.0em;
@@ -112,11 +97,11 @@
 		}
 
 		.login-button:hover {
-			background-color: hsla(206, 5%, 30%, 0.3);
+			background-color: hsla(201, 100%, 50%, 0.3);
 		}
 
 		.login-button:focus {
-			background-color: hsla(201, 19%, 77%, 0.5);
+			background-color: hsla(201, 100%, 50%, 0.5);
 		}
 
 		.input-group input:focus {
@@ -147,41 +132,28 @@
 		.signin-button:focus {
 			background-color: hsla(201, 100%, 50%, 0.5);
 		}
-		h1 {text-align: center;}
 	</style>
-</head>
+    </head>
 
-<body>
+    <body>
 	<!-- <div class="image"></div> -->
 	<div class="full-screen-container">
 		<div class="login-container">
-			<h3 class="login-title"></h3>
-			<form:form action="addVilla" method="POST" modelAttribute="obj" enctype="multipart/form-data">
-				<div>
-					<h1>Add Villa</h1>
+			<h3 class="login-title">SIGN-iN</h3>
+			<form action="Login" method="post">
+
+				<div class="input-group">
+					<input type="text" name="uname" placeholder="Name">
 				</div>
 				<div class="input-group">
-					<form:input path="name" placeholder="Enter Name"/>
+					<input type="password" name="pass" placeholder="Password">
 				</div>
-				<div class="input-group">
-					<form:input path="Bedrooms" placeholder="Enter Number of Bedrooms"/>
-				</div>
-				<div class="input-group">
-					<form:input path="Floors" placeholder="Enter Number of Floors"/>
-				</div>
-				<div class="input-group">
-					<form:input path="noSwimmingPool" placeholder="Enter Number of Swimmingpools"/>
-				</div>
-				<div class="input-group">
-					<input name="oid" type="text" placeholder="Enter OwnerID"/>
-				</div>
-				<div class="input-group">
-					<form:input path="Description" placeholder="Enter Description"/>
-				</div>
-				<button type="submit" class="login-button" value="submit">SUBMIT</button>
-			</form:form>
+				<input type="submit" value="Login" class="login-button"">
+				<!-- <button type="submit" class="login-button">SIGN IN</button> -->
+				<div class="input-group"><a href="signin.jsp" class="signin-button">SIGN UP</a></div>
+			</form>
 		</div>
 	</div>
-</body>
+    </body>
 
 </html>

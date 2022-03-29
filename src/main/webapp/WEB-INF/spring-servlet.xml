@@ -43,6 +43,7 @@
         	<value>project.beans.Office</value>
         	<value>project.beans.ResidentialBuilding</value>
         	<value>project.beans.Villa</value>
+        	<value>project.beans.agent</value>
         </list>  
         </property>  
      

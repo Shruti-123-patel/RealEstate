@@ -9,6 +9,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -34,6 +35,16 @@ public class Office extends Product implements Serializable {
 	int id;
 
 	int ConferenceRooms;
+
+	int price;
+	
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
 
 	String Description;
 
@@ -81,7 +92,7 @@ public class Office extends Product implements Serializable {
 
 	int WaitingRooms;
 
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "ownerId", unique = true)
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "ownerId")
 	ownerDetails owner;
 }

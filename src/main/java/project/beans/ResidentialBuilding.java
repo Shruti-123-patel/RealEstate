@@ -1,6 +1,7 @@
 package project.beans;
 
 import java.io.Serializable;
+import java.util.Arrays;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -8,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -24,7 +27,7 @@ public class ResidentialBuilding extends Product implements Serializable {
 	int id;
 	int Bedrooms;
 	String Description;
-	String Name;
+	private String Name;
 
 	public String getName() {
 		return Name;
@@ -32,6 +35,13 @@ public class ResidentialBuilding extends Product implements Serializable {
 
 	public void setName(String name) {
 		Name = name;
+	}
+
+	@Override
+	public String toString() {
+		return "ResidentialBuilding [id=" + id + ", Bedrooms=" + Bedrooms + ", Description=" + Description + ", Name="
+				+ Name + ", Floors=" + Floors + ", owner=" + owner + ", price=" + price + ", img="
+				+ Arrays.toString(img) + "]";
 	}
 
 	public int getId() {
@@ -76,7 +86,29 @@ public class ResidentialBuilding extends Product implements Serializable {
 
 	int Floors;
 
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "ownerId", unique = true)
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "ownerId")
 	ownerDetails owner;
+
+	int price;
+
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+
+	@Lob
+	byte[] img;
+
+	public byte[] getImg() {
+		return img;
+	}
+
+	public void setImg(byte[] img) {
+		this.img = img;
+	}
+
 }

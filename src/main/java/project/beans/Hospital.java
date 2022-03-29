@@ -9,6 +9,8 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.Lob;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -39,6 +41,25 @@ public class Hospital extends Product implements Serializable {
 		this.id = id;
 	}
 
+int price;
+	
+	public int getPrice() {
+		return price;
+	}
+
+	public void setPrice(int price) {
+		this.price = price;
+	}
+	@Lob
+    byte[] img;
+
+    public byte[] getImg() {
+        return img;
+    }
+
+    public void setImg(byte[] img) {
+        this.img = img;
+    }
 	int GeneralRooms;
 
 	String Description;
@@ -107,7 +128,7 @@ public class Hospital extends Product implements Serializable {
 		this.owner = owner;
 	}
 
-	@OneToOne(cascade = CascadeType.ALL)
-	@JoinColumn(name = "ownerId", unique = true)
+	@ManyToOne(cascade = CascadeType.ALL)
+	@JoinColumn(name = "ownerId")
 	ownerDetails owner;
 }

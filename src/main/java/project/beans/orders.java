@@ -10,6 +10,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
@@ -26,8 +27,8 @@ public class orders implements Serializable{
 	@GeneratedValue( strategy = GenerationType. IDENTITY   )
 	int Id;
 	
-	@OneToOne(cascade =CascadeType.ALL)
-	@JoinColumn(name = "custId", unique= true)
+	@ManyToOne(cascade =CascadeType.ALL)
+	@JoinColumn(name = "custId")
 	Customer customer;
 	
 	@Column(name = "productId")
@@ -39,5 +40,7 @@ public class orders implements Serializable{
 	
 	@Column(name = "date")
 	Date date;
+	
+	
 
 }

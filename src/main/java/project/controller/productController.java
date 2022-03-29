@@ -45,7 +45,7 @@ public class productController {
 		{
 			System.out.println(i.getName());
 		}
-		return "adminHome";
+		return "adminProduct";
 	}
 	
 	
@@ -126,21 +126,21 @@ public class productController {
 		return "addHospital";
 	}
 	
-	@RequestMapping(value="/addComplex",method=RequestMethod.POST,consumes = {MediaType.MULTIPART_FORM_DATA_VALUE})
-	public String addComplex(@RequestParam CommonsMultipartFile img, Complex h,Model m,HttpServletRequest request,HttpSession s) {
+	@RequestMapping(value="/addComplex",method=RequestMethod.POST)
+	public String addComplex( Complex h,Model m,HttpServletRequest request,HttpSession s) {
 		String i=request.getParameter("oid");
-		byte[] data=img.getBytes();
-		String path=s.getServletContext().getRealPath("/")+"assets"+File.separator+"images"+File.separator+img.getOriginalFilename();
-		try {
-			FileOutputStream fos=new FileOutputStream(path);
-			fos.write(data);
-			fos.close();
-			System.out.print("file uploaded");
-		}catch(IOException E) {
-			E.printStackTrace();
-		}
-		String name=img.getOriginalFilename();
-		productDAO.adComplex(h,i,name);
+//		byte[] data=img.getBytes();
+//		String path=s.getServletContext().getRealPath("/")+"assets"+File.separator+"images"+File.separator+img.getOriginalFilename();
+//		try {
+//			FileOutputStream fos=new FileOutputStream(path);
+//			fos.write(data);
+//			fos.close();
+//			System.out.print("file uploaded");
+//		}catch(IOException E) {
+//			E.printStackTrace();
+//		}
+//		String name=img.getOriginalFilename();
+		productDAO.adComplex(h,i);
 		Complex c=new Complex();
 		m.addAttribute("obj", c);
 		return "addComplex";
@@ -191,6 +191,7 @@ public class productController {
 		Product p=productDAO.findProduct(pid,classs);
 		
 		System.out.println(p);
+		System.out.println("ha baraber");
 		m.addAttribute("obj", p);
 		return "update"+classs;
 	}

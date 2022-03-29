@@ -34,6 +34,14 @@ public class ProductDAO {
 		p.setOwner(o);
 		hibernateTemplate.save(p);
 	}
+	
+	@Transactional
+	public List<availableProduct> listAvailableProductsByName(String name) {
+		Session session = this.factory.getCurrentSession();
+		List<availableProduct> ProductsList = session.createQuery("from availableProduct where Name like '%" + name+"%'").list();
+//		System.out.println("Shruti");
+		return ProductsList;
+	}
 
 	@Transactional
 	public void adVilla(Villa p, String oid) {
@@ -65,11 +73,11 @@ public class ProductDAO {
 	}
 
 	@Transactional
-	public void adComplex(Complex p, String oid,String img) {
+	public void adComplex(Complex p, String oid) {
 		Integer id = Integer.parseInt(oid);
 		ownerDetails o = hibernateTemplate.get(ownerDetails.class, id);
 		p.setOwner(o);
-		p.setImg(img);
+//		p.setImg(img);
 		hibernateTemplate.save(p);
 	}
 

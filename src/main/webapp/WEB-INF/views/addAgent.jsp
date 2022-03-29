@@ -1,4 +1,4 @@
-<!-- <%@ page language="java" contentType="text/html; charset=UTF-8"
+<%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 
 <%@ page
@@ -6,12 +6,33 @@
 <%@ page isELIgnored="false"%>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
-<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%> -->
+<%@ taglib prefix="form" uri="http://www.springframework.org/tags/form"%>
+<%-- <!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>Insert title here</title>
+</head>
+<body>
+	<form:form action="addComplex" method="POST" modelAttribute="obj" enctype="multipart/form-data">
+		Name:		  <form:input path="Name" />
+		Shops: 	  	  <form:input path="Shops" />
+		Description:  <form:input path="Description" />
+		OwnerId:	  <input name="oid" type="text"/>  
+		image:		  <input type="file" name="img" />	
+		<input type="submit" value="Submit" />
+	
+	</form:form>
+</body>
+</html> --%>
 <!DOCTYPE html>
 <html>
 <head>
+<link href="https://maxcdn.bootstrapcdn.com/font-awesome/4.2.0/css/font-awesome.min.css" rel="stylesheet">
+<script src="https://kit.fontawesome.com/81ac83e5bf.js" crossorigin="anonymous"></script>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>addAgent</title>
 <style>
 @import
 	url('https://fonts.googleapis.com/css2?family=Quicksand:wght@300;500&display=swap')
@@ -45,12 +66,11 @@ html, body {
 
 .login-container {
 	/* background-color: hsla(201, 81%, 80%, 0.6); */
-	border: 1px solid;
 	padding: 50px 30px;
 	min-width: 400px;
 	width: 50%;
 	max-width: 00px;
-	border-color: rgb(0, 0, 0);
+	border-color: green;
 	border-radius: 40px;
 	/* z-index: 2; */
 }
@@ -83,7 +103,7 @@ html, body {
 	background-color: hsla(201, 100%, 91%, 0.3);
 	border: 1px solid hsl(201, 100%, 6%);
 	outline: none;
-	border-radius: 10px;
+	border-radius: 15px;
 	color: rgb(0, 0, 0);
 	font-weight: 25px;
 }
@@ -146,35 +166,56 @@ html, body {
 .signin-button:focus {
 	background-color: hsla(201, 100%, 50%, 0.5);
 }
-h1 {text-align: center;}
 </style>
 </head>
 <body>
 	<!-- <div class="image"></div> -->
+	
+	<nav class="navbar navbar-expand-lg navbar-light bg-light">
+		<div class="container-fluid">
+			<a class="navbar-brand" href="#">Admin</a>
+			<button class="navbar-toggler" type="button"
+				data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent"
+				aria-controls="navbarSupportedContent" aria-expanded="false"
+				aria-label="Toggle navigation">
+				<span class="navbar-toggler-icon"></span>
+			</button>
+			<div class="collapse navbar-collapse" id="navbarSupportedContent">
+				<ul class="navbar-nav me-auto mb-2 mb-lg-0">
+					<li class="nav-item"><a class="nav-link"
+						href="adminHome">Products</a></li>
+					<li class="nav-item"><a class="nav-link  active" href="adminAgent">Agents</a></li>
+					<li class="nav-item"><a class="nav-link" href="adminCust">Customers</a></li>
+				</ul>
+				<form class="d-flex" action="searchAgent">
+					<input class="form-control me-2" type="search" name="agent" placeholder="Search Customer"
+						aria-label="Search">
+					<button class="btn btn-outline-success" type="submit">Search</button>
+				</form>
+			</div>
+		</div>
+	</nav>
+	
 	<div class="full-screen-container">
 		<div class="login-container">
-			<h3 class="login-title"></h3>
-			<form:form action="addComplex" method="POST" modelAttribute="obj" enctype="multipart/form-data">
-				<div>
-					<h1>Add Complex</h1>
-				</div>
-				<div class="input-group">
-					<form:input path="Name" placeholder="Enter Name"/>
-				</div>
-				<div class="input-group">
-					<form:input path="Shops" placeholder="Enter Number of Shops"/>
-				</div>
-				<div class="input-group">
-					<form:input path="Description" placeholder="Enter Description"/>
-				</div>
-				<div class="input-group">
-					<input name="oid" type="text" placeholder="Enter OwnerID"/>
-				</div>
-				<!-- <div class="input-group">
-					<input type="file" name="img" />
-				</div> -->
+			<h3 class="login-title">Add Agent</h3>
+			<form:form action="addAgentAfter" method="POST" modelAttribute="a">
 
-				<button type="submit" class="login-button" value="submit">SUBMIT</button>
+				<div class="input-group">
+					<form:input path="name" placeholder="Enter Name"/>
+				</div>
+				<div class="input-group">
+					<form:input path="city"  placeholder="Enter City"/>
+				</div>
+				<div class="input-group">
+					<form:input path="email" placeholder="Enter Email" />
+				</div>
+				
+				<div class="input-group">
+					<form:input path="phoneNo" placeholder="Enter PhoneNo" />
+				</div>
+
+				<button type="submit" class="login-button" value="submit">Add Agent</button>
 
 			</form:form>
 		</div>
