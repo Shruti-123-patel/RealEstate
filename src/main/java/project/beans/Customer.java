@@ -5,7 +5,7 @@ import java.io.Serializable;
 import javax.persistence.*;
 
 @Entity
-@Table(name="Customer")
+@Table(name="customer")
 public class Customer implements Serializable{
 	
 	/**
@@ -16,25 +16,45 @@ public class Customer implements Serializable{
 	@Id
 	@GeneratedValue( strategy = GenerationType. IDENTITY   )
 	int custId;
+
+	String name;
 	
-	@Column(name = "name")
-	private String Name;
+	String phoneNo;
+	
+	String email;
+	
+	String accNo;
 	
 	public int getCustId() {
 		return custId;
 	}
 	
+	String password;
+
+	public String getPassword() {
+		return password;
+	}
+
+	public void setPassword(String pass) {
+		password = pass;
+	}
+
+	@Override
+	public String toString() {
+		return "Customer [custId=" + custId + ", name=" + name + ", phoneNo=" + phoneNo + ", email=" + email
+				+ ", accNo=" + accNo + ", password=" + password + "]";
+	}
 
 	public void setCustId(int custId) {
 		this.custId = custId;
 	}
 
-	public String getPhone_no() {
-		return Phone_no;
+	public String getPhoneNo() {
+		return phoneNo;
 	}
 
-	public void setPhone_no(String phone_no) {
-		Phone_no = phone_no;
+	public void setPhoneNo(String phone_no) {
+		phoneNo = phone_no;
 	}
 
 	public String getEmail() {
@@ -46,27 +66,20 @@ public class Customer implements Serializable{
 	}
 
 	public String getAccountNo() {
-		return accountNo;
+		return accNo;
 	}
 
 	public void setAccountNo(String accountNo) {
-		this.accountNo = accountNo;
+		this.accNo = accountNo;
 	}
 
-	@Column(name = "phoneNo")
-	String Phone_no;
-	
-	@Column(name = "email")
-	String email;
-	
-	@Column(name = "accNo")
-	String accountNo;
+
 
 	public String getName() {
-		return Name;
+		return name;
 	}
 
-	public void setName(String name) {
-		Name = name;
+	public void setName(String n) {
+		name = n;
 	}
 }

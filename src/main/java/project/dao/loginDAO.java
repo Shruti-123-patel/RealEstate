@@ -34,7 +34,7 @@ public class loginDAO {
         return false;
     }
     
-        public String getCustomerID(String uname, String pass) {
+        public int getCustomerID(String uname, String pass) {
         try {
             Class.forName("com.mysql.jdbc.Driver");
             Connection con = DriverManager.getConnection(url, username, password);
@@ -43,11 +43,11 @@ public class loginDAO {
             st.setString(2, pass);
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
-                return rs.getString("id");
+                return rs.getInt("custId");
             }
         } catch (Exception e) {
             e.printStackTrace();
         }
-        return null;
+        return -1;
     }
 }

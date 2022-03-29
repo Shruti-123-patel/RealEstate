@@ -161,22 +161,22 @@
 					<form:hidden value="${obj.id }" path="id"/>
 				</div>
 				<div class="input-group">
-					<form:input value="${obj.Name }" path="Name" />
+					<form:input value="${obj.name }" path="name" />
 				</div>
 				<div class="input-group">
-					<form:input value="${obj.Bedrooms }" path="Bedrooms" />
+					<form:input value="${obj.bedrooms }" path="bedrooms" />
 				</div>
 				<div class="input-group">
-					<form:input value="${obj.Floors }" path="Floors" />
+					<form:input value="${obj.floors }" path="floors" />
 				</div>
 				<div class="input-group">
 					<form:input value="${obj.noSwimmingPool }" path="noSwimmingPool" />
 				</div>
 				<div class="input-group">
-					<input name="oid" type="text" value="${obj.ownerID }"/>
+					<input name="oid" type="text" value="${obj.owner.Id }"/>
 				</div>
 				<div class="input-group">
-					<form:input value="${obj.Description }" path="Description" />
+					<form:input value="${obj.description }" path="description" />
 				</div>
 				<button type="submit" class="login-button" value="submit">SUBMIT</button>
 			</form:form>

@@ -37,12 +37,7 @@ public class ResidentialBuilding extends Product implements Serializable {
 		Name = name;
 	}
 
-	@Override
-	public String toString() {
-		return "ResidentialBuilding [id=" + id + ", Bedrooms=" + Bedrooms + ", Description=" + Description + ", Name="
-				+ Name + ", Floors=" + Floors + ", owner=" + owner + ", price=" + price + ", img="
-				+ Arrays.toString(img) + "]";
-	}
+	
 
 	public int getId() {
 		return id;
@@ -100,14 +95,13 @@ public class ResidentialBuilding extends Product implements Serializable {
 		this.price = price;
 	}
 
-	@Lob
-	byte[] img;
+	private String img;
 
-	public byte[] getImg() {
+	public String getImg() {
 		return img;
 	}
 
-	public void setImg(byte[] img) {
+	public void setImg(String img) {
 		this.img = img;
 	}
 

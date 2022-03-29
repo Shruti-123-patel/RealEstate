@@ -19,7 +19,7 @@ public class loginServlet extends HttpServlet {
   protected void processRequest(HttpServletRequest request, HttpServletResponse response)
           throws ServletException, IOException {
       response.setContentType("text/html;charset=UTF-8");
-      try ( PrintWriter out = response.getWriter()) {
+      try  {
           String uname = request.getParameter("uname");
           String password = request.getParameter("pass");
           
@@ -29,10 +29,13 @@ public class loginServlet extends HttpServlet {
               HttpSession session = request.getSession();
               session.setAttribute("username", uname);
               session.setAttribute("customerID", dao.getCustomerID(uname, password));
-              response.sendRedirect("index.jsp");
-          } else {
+              response.sendRedirect("/project/");
+          } 
+          else {
               response.sendRedirect("registration.jsp");
           }
+      }catch(Exception e) {
+    	  e.printStackTrace();
       }
   }
 

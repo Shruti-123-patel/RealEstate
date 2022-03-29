@@ -34,10 +34,10 @@ public class Office extends Product implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
 
-	int ConferenceRooms;
+	int conferenceRooms;
 
 	int price;
-	
+
 	public int getPrice() {
 		return price;
 	}
@@ -46,40 +46,50 @@ public class Office extends Product implements Serializable {
 		this.price = price;
 	}
 
-	String Description;
+	String description;
 
-	String Name;
+	private String img;
 
-	public String getName() {
-		return Name;
+	public String getImg() {
+		return img;
 	}
 
-	public void setName(String name) {
-		Name = name;
+	public void setImg(String img) {
+		this.img = img;
+	}
+
+	String name;
+
+	public String getName() {
+		return name;
+	}
+
+	public void setName(String n) {
+		name = n;
 	}
 
 	public int getConferenceRooms() {
-		return ConferenceRooms;
+		return conferenceRooms;
 	}
 
-	public void setConferenceRooms(int conferenceRooms) {
-		ConferenceRooms = conferenceRooms;
+	public void setConferenceRooms(int conference) {
+		conferenceRooms = conference;
 	}
 
 	public String getDescription() {
-		return Description;
+		return description;
 	}
 
-	public void setDescription(String description) {
-		Description = description;
+	public void setDescription(String des) {
+		description = des;
 	}
 
 	public int getWaitingRooms() {
-		return WaitingRooms;
+		return waitingRooms;
 	}
 
 	public void setWaitingRooms(int waitingRooms) {
-		WaitingRooms = waitingRooms;
+		waitingRooms = waitingRooms;
 	}
 
 	public ownerDetails getOwner() {
@@ -90,7 +100,7 @@ public class Office extends Product implements Serializable {
 		this.owner = owner;
 	}
 
-	int WaitingRooms;
+	int waitingRooms;
 
 	@ManyToOne(cascade = CascadeType.ALL)
 	@JoinColumn(name = "ownerId")

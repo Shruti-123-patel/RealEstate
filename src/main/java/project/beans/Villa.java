@@ -30,7 +30,7 @@ public class Villa extends Product implements Serializable {
 	@GeneratedValue(strategy = GenerationType.IDENTITY)
 	int id;
 
-	int Bedrooms;
+	int bedrooms;
 
 	String name;
 
@@ -38,34 +38,34 @@ public class Villa extends Product implements Serializable {
 		return name;
 	}
 
-	public void setName(String name) {
-		name = name;
+	public void setName(String n) {
+		name = n;
 	}
 
-	String Description;
+	String description;
 
 	public int getBedrooms() {
-		return Bedrooms;
+		return bedrooms;
 	}
 
-	public void setBedrooms(int bedrooms) {
-		Bedrooms = bedrooms;
+	public void setBedrooms(int bed) {
+		bedrooms = bed;
 	}
 
 	public String getDescription() {
-		return Description;
+		return description;
 	}
 
-	public void setDescription(String description) {
-		Description = description;
+	public void setDescription(String des) {
+		description = des;
 	}
 
 	public int getFloors() {
-		return Floors;
+		return floors;
 	}
 
-	public void setFloors(int floors) {
-		Floors = floors;
+	public void setFloors(int floor) {
+		floors = floor;
 	}
 
 	public int getNoSwimmingPool() {
@@ -84,7 +84,7 @@ public class Villa extends Product implements Serializable {
 		this.owner = owner;
 	}
 
-	int Floors;
+	int floors;
 	int noSwimmingPool;
 
 	@ManyToOne(cascade = CascadeType.ALL)
@@ -100,14 +100,14 @@ public class Villa extends Product implements Serializable {
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	@Lob
-    byte[] img;
 
-    public byte[] getImg() {
-        return img;
-    }
+	private String img;
 
-    public void setImg(byte[] img) {
-        this.img = img;
-    }
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
+	}
 }

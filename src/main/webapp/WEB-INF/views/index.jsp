@@ -3,6 +3,7 @@
 <%@ page isELIgnored="false" %>
 <%@taglib prefix="spring" uri="http://www.springframework.org/tags"%>
  <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core" %>
+ 
 <html class="no-js">
 <head>
 <meta charset="utf-8">
@@ -71,7 +72,7 @@
 					<div class="nav-header">
 						<a href="#" class="js-fh5co-nav-toggle fh5co-nav-toggle dark"><i></i></a>
 						<h1 id="fh5co-logo">
-							<a href="index.jsp"><i class="icon-home"></i>Home<span>state</span></a>
+							<a href="index.jsp"><i class="icon-home"></i>Eternal<span>Empire</span></a>
 						</h1>
 						<!-- START #fh5co-menu-wrap -->
 						<nav id="fh5co-menu-wrap" role="navigation">
@@ -79,22 +80,29 @@
 								<li class="active"><a href="index.jsp">Home</a></li>
 								<li><a href="properties.jsp" class="fh5co-sub-ddown">Properties</a>
 									<ul class="fh5co-sub-menu">
-										<li><a href="#">Hospital</a></li>
-										<li><a href="#">Residential Building</a></li>
-										<li><a href="#">Villa</a></li>
-										<li><a href="#">Office</a></li>
-										<li><a href="#">Complex</a></li>
+										<li><a href="hospital">Hospital</a></li>
+										<li><a href="resi">Residential Building</a></li>
+										<li><a href="villa">Villa</a></li>
+										<li><a href="office">Office</a></li>
+										<li><a href="complex">Complex</a></li>
 									</ul></li>
 									<%
 									int id=-1;
-									if(session.getAttribute("id")!=null)
-										id=(Integer)session.getAttribute("id");
-									String name="Profile";
-									if(id==-1)
-										name="SignIn";
+									String name="Login";
+									String link="/project/login";
+									System.out.println("yahoooooo345!!!!");
+									if(session.getAttribute("customerID")!=null)
+									{
+										id = (Integer) session.getAttribute("customerID");
+										System.out.println("yahoooooo!!!!");
+										name=(String) session.getAttribute("username");
+										link="updateCustomer?cid="+id;
+									}
 								%>
 								<li><a href="agent">Agent</a></li>
-								<li><a href="updateCustomer?cid=<%=id%>"><%=name%></a></li>
+								<li><a href="blog">Blog</a></li>
+								<li><a href="contact">Contact</a></li>
+								<li><a href="<%= link%>"><%=name%></a></li>
 							</ul>
 						</nav>
 					</div>

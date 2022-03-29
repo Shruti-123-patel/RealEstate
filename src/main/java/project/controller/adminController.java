@@ -4,6 +4,7 @@ package project.controller;
 import java.util.List;
 
 import javax.servlet.http.HttpServletRequest;
+import javax.servlet.http.HttpSession;
 
 import org.springframework.beans.factory.annotation.Autowired;
 
@@ -113,9 +114,12 @@ public class adminController {
 	}
 	
 	@RequestMapping(value="/updateCustomerAfter")
-	void updateCustomerAfter(Customer c) {
+	String updateCustomerAfter(Customer c,HttpServletRequest req) {
+		System.out.println(c);
 		customerDAO.Update(c);
-		
+		HttpSession session=req.getSession();
+		session.setAttribute("username",c.getName());
+		return "index";
 	}
 	
 	

@@ -52,20 +52,19 @@ public class Complex extends Product implements Serializable {
 		Name = name;
 	}
     
-	@Lob
-    byte[] img;
+	private String img;
+	
+	
+	
+	
 
-    public byte[] getImg() {
-        return img;
-    }
+	public String getImg() {
+		return img;
+	}
 
-    public void setImg(byte[] img) {
-        this.img = img;
-    }
-	
-	
-	
-	
+	public void setImg(String img) {
+		this.img = img;
+	}
 
 	public int getShops() {
 		return this.Shops;

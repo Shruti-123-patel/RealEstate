@@ -260,4 +260,24 @@ public class productController {
 		
 	}
 	
+	@RequestMapping("/contact")
+	public String toproperties() {
+		return "contact";
+	}
+	@RequestMapping("/blog")
+	public String toblog() {
+		return "blog";
+	}
+	
+	@RequestMapping(value="/payment")
+	String payment() {
+		return "payment";
+		
+	}
+	
+	@RequestMapping(value="/checkout")
+	String checkout() {
+		return "checkout";
+		
+	}
 }

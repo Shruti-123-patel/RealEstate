@@ -41,8 +41,8 @@ public class Hospital extends Product implements Serializable {
 		this.id = id;
 	}
 
-int price;
-	
+	int price;
+
 	public int getPrice() {
 		return price;
 	}
@@ -50,16 +50,17 @@ int price;
 	public void setPrice(int price) {
 		this.price = price;
 	}
-	@Lob
-    byte[] img;
 
-    public byte[] getImg() {
-        return img;
-    }
+	private String img;
 
-    public void setImg(byte[] img) {
-        this.img = img;
-    }
+	public String getImg() {
+		return img;
+	}
+
+	public void setImg(String img) {
+		this.img = img;
+	}
+
 	int GeneralRooms;
 
 	String Description;
