@@ -254,4 +254,10 @@ public class productController {
 		viewAll(pid,request,m);
 	}
 	
+	@RequestMapping(value="/login")
+	String login() {
+		return "login";
+		
+	}
+	
 }

@@ -8,11 +8,12 @@ import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.io.PrintWriter;
 import javax.servlet.ServletException;
+import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
-
+@WebServlet("/Login")
 public class loginServlet extends HttpServlet {
 
   protected void processRequest(HttpServletRequest request, HttpServletResponse response)
@@ -28,9 +29,9 @@ public class loginServlet extends HttpServlet {
               HttpSession session = request.getSession();
               session.setAttribute("username", uname);
               session.setAttribute("customerID", dao.getCustomerID(uname, password));
-              response.sendRedirect("link.jsp");
-          } else {
               response.sendRedirect("index.jsp");
+          } else {
+              response.sendRedirect("registration.jsp");
           }
       }
   }
@@ -52,5 +53,4 @@ public class loginServlet extends HttpServlet {
   public String getServletInfo() {
       return "Short description";
   }
-
 }

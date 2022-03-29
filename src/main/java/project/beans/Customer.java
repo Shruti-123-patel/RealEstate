@@ -23,6 +23,7 @@ public class Customer implements Serializable{
 	public int getCustId() {
 		return custId;
 	}
+	
 
 	public void setCustId(int custId) {
 		this.custId = custId;
